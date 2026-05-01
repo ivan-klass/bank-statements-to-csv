@@ -1,0 +1,51 @@
+[project]
+name = "bank-pdf-analyze"
+version = "0.1.0"
+description = "Pipeline that produces transactions.csv from Raiffeisen (Serbia) bank statement PDFs delivered by email."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-auth>=2.0",
+    "google-auth-oauthlib>=1.0",
+    "google-api-python-client>=2.0",
+    "pdfplumber>=0.10",
+]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1",
+    "ruff>=0.15",
+]
+
+[tool.pyright]
+include = [
+    "download_email_attachments.py",
+    "extract_pdf_transactions.py",
+    "extract_xml_transactions.py",
+    "transactions_to_csv.py",
+]
+pythonVersion = "3.12"
+typeCheckingMode = "standard"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # Pyflakes
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "SIM",  # flake8-simplify
+    "C4",   # flake8-comprehensions
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
