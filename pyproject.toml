@@ -5,16 +5,16 @@ description = "Pipeline that produces transactions.csv from Raiffeisen (Serbia) 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "google-auth>=2.52.0",
+    "google-auth>=2.55.0",
     "google-auth-oauthlib>=1.4.0",
-    "google-api-python-client>=2.196.0",
-    "pdfplumber>=0.10",
+    "google-api-python-client>=2.197.0",
+    "pdfplumber>=0.11.10",
 ]
 
 [dependency-groups]
 dev = [
-    "pyright>=1.1",
-    "ruff>=0.15",
+    "pyright>=1.1.410",
+    "ruff>=0.15.18",
 ]
 
 [tool.pyright]
